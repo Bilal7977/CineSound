@@ -1,0 +1,135 @@
+expression = 'a+b*c/d-e'
+register_count = 1
+result_1 = None
+result_2_flag = None
+result_2 = None
+register_dict = {}
+alp = ''
+
+def mov_2_evaluate(operation):
+    global register_count, alp, result_1, register_dict
+    register_1 = 'R' + str(register_count)
+    register_dict[register_1] = expression[expression.index(operation)-1]
+    alp = alp + '\nMOV ' + register_1 + ', ' + register_dict[register_1]
+    register_count += 1
+    register_2 = 'R' + str(register_count)
+    register_dict[register_2] = expression[expression.index(operation)+1]
+    alp = alp + '\nMOV ' + register_2 + ', ' + register_dict[register_2]
+    register_count += 1
+
+    if operation == '*':
+        alp = alp + '\nMUL ' + register_1 + ', ' + register_2
+    if operation == '/':
+        alp = alp + '\nDIV ' + register_1 + ', ' + register_2
+    if operation == '+':
+        alp = alp + '\nADD ' + register_1 + ', ' + register_2
+    if operation == '-':
+        alp = alp + '\nSUB ' + register_1 + ', ' + register_2
+    result_1 = register_1
+
+def mov_1_evaluate(operation):
+    global register_count, alp, result_1, register_dict, result_2_flag, result_2
+    register_1 = result_1
+    right_operand_exists = False
+    left_operand_exists = False
+    if expression[expression.index(operation)+1] in list(register_dict.values()) and expression[expression.index(operation)-1] in list(register_dict.values()):
+        register_1 = result_1
+        register_2 = result_2
+        right_operand_exists = True
+        print('r2f Trued')
+        print(register_dict)
+    elif expression[expression.index(operation)+1] in list(register_dict.values()):
+        register_1 = result_1
+        register_2 = 'R' + str(register_count)
+
+        register_dict[register_2] = expression[expression.index(operation)-1]
+        right_operand_exists = True
+        alp = alp + '\nMOV ' + register_2 + ', ' + register_dict[register_2]
+    elif expression[expression.index(operation)-1] in list(register_dict.values()):
+        register_1 = result_1
+        register_2 = 'R' + str(register_count)
+        register_dict[register_2] = expression[expression.index(operation)+1]
+        left_operand_exists = True
+        alp = alp + '\nMOV ' + register_2 + ', ' + register_dict[register_2]
+    else:
+        register_1 = 'R' + str(register_count)
+        register_dict[register_1] = expression[expression.index(operation)-1]
+        alp = alp + '\nMOV ' + register_1 + ', ' + register_dict[register_1]
+        register_count += 1
+        register_2 = 'R' + str(register_count)
+        register_dict[register_2] = expression[expression.index(operation)+1]
+        result_2_flag = True
+        alp = alp + '\nMOV ' + register_2 + ', ' + register_dict[register_2]
+
+    register_count += 1
+    if operation == '*':
+        alp = alp + '\nMUL ' + register_1 + ', ' + register_2
+        if result_2_flag:
+            result_2 = register_1
+        else:
+            result_1 = register_1
+
+    if operation == '+':
+        alp = alp + '\nADD ' + register_1 + ', ' + register_2
+        if result_2_flag:
+            result_2 = register_1
+        else:
+            result_1 = register_1
+
+    if operation == '-':
+        if right_operand_exists:
+            alp = alp + '\nSUB ' + register_2 + ', ' + register_1
+            if result_2_flag:
+                result_2 = register_1
+            else:
+                result_1 = register_1
+        else:
+            alp = alp + '\nSUB ' + register_1 + ', ' + register_2
+            if result_2_flag:
+                result_2 = register_1
+            else:
+                result_1 = register_1
+        
+    if operation == '/':
+        if right_operand_exists:
+            alp = alp + '\nDIV ' + register_2 + ', ' + register_1
+            if result_2_flag:
+                result_2 = register_1
+            else:
+                result_1 = register_1
+        else:
+            alp = alp + '\nDIV ' + register_1 + ', ' + register_2
+            if result_2_flag:
+                result_2 = register_1
+            else:
+                result_1 = register_1
+
+for i in expression:
+    if i == '*':
+        if not result_1:
+            mov_2_evaluate(i)
+        else:
+            mov_1_evaluate(i)
+
+for i in expression:
+    if i == '/':
+        if not result_1:
+            mov_2_evaluate(i)
+        else:
+            mov_1_evaluate(i)
+
+for i in expression:
+    if i == '+':
+        if not result_1:
+            mov_2_evaluate(i)
+        else:
+            mov_1_evaluate(i)
+
+for i in expression:
+    if i == '-':
+        if not result_1:
+            mov_2_evaluate(i)
+        else:
+            mov_1_evaluate(i)
+
+print(alp)

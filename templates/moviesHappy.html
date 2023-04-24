@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Happy_Movies</title>
+    <!-- <link rel="stylesheet" href="happy.css"> -->
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(rgba(43, 163, 238, 0.85),rgba(212, 227, 11, 0.72)),url(Images/img4.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    img{
+        width: 180px;
+        height: 250px;
+        margin: 0px;
+        border: 6px double white;
+    }   
+
+    .img{
+        width: 500px;
+        height: 500px;
+        border: 4px solid black;
+        margin: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+    }
+    .header{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(22, 22, 21, 0.5),rgba(10, 10, 10, 0.849)),url(static/img12.png);
+        background-position: center;
+        background-size: cover;
+        overflow-x: hidden;
+        justify-content: center;
+        text-align: center;
+    }
+    .box{
+        
+        box-shadow: 0 0 20px 2px rgba(0,0,0,0.1);
+        transition: 1s;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        
+    }
+    .box img:hover{
+        transform: scale(1.025);
+        z-index: 2;
+    }
+
+    .card{
+        background-color: rgba(89, 244, 182, 0.945);
+        margin: 10px; 
+      width: 250px;
+        
+    }
+    .btn:hover{
+        transform: scale(1.25);
+
+    }
+
+    .card-title{
+        font: italic 1.2em "Fira Sans", serif;
+        font-weight: bold;
+    }
+    
+    </style>
+</head>
+
+<body>
+       
+    <div class="header col ">
+      
+
+       
+        <div class="box ">
+
+        <div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+            <img class="card-img-top" src="https://i.postimg.cc/yNkXPtnp/bg1.png" alt="funcard img">
+            <div class="card-body">
+                <div class="card-title h1"> Black Panther
+                    <div class="card-text card-text-right">
+                         <h6> IMBD Rating 7.3/10 796k  </h6>
+                        <a href="https://www.imdb.com/title/tt1825683/" target="_blank" class="btn btn-info"> Watch Now!</a>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+      <div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+        <img class="card-img-top" src="https://i.postimg.cc/GpRJ0KPd/bg2.png" alt="funcard img">
+        <div class="card-body">
+            <div class="card-title h1"> Mad Max: Fury Road
+                <div class="card-text card-text-right">
+                     <h6> IMBD Rating 8.1/10 1M  </h6>
+                    <a href="https://www.imdb.com/title/tt1392190/" target="_blank" class="btn btn-info"> Watch Now!</a>
+                </div>
+            </div>
+        </div>
+  </div>
+  <div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+    <img class="card-img-top" src="https://i.postimg.cc/MTLL51yV/bg5.png" alt="funcard img">
+    <div class="card-body">
+        <div class="card-title h1"> Coco
+            <div class="card-text card-text-right">
+                 <h6> IMBD Rating 8.4/10 526k  </h6>
+                <a href="https://www.imdb.com/title/tt2380307/" target="_blank" class="btn btn-info"> Watch Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+    <img class="card-img-top" src="https://i.postimg.cc/L6Ms3Wm9/bg6.png" alt="funcard img">
+    <div class="card-body">
+        <div class="card-title h1"> Dunkirk
+            <div class="card-text card-text-right">
+                 <h6> IMBD Rating 7.8/10 676k  </h6>
+                <a href="https://www.imdb.com/title/tt5013056/" target="_blank" class="btn btn-info"> Watch Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+    <img class="card-img-top" src="https://i.postimg.cc/9FpqR2y5/bg7.png" alt="funcard img">
+    <div class="card-body">
+        <div class="card-title h1"> Incredibles 2
+            <div class="card-text card-text-right">
+                 <h6> IMBD Rating 7.6/10 306k  </h6>
+                <a href="https://www.imdb.com/title/tt3606756/" target="_blank" class="btn btn-info"> Watch Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+    <img class="card-img-top" src="https://i.postimg.cc/YqGnr4Qy/bg10.png" alt="funcard img">
+    <div class="card-body">
+        <div class="card-title h1"> Star Wars: Episode VII
+            <div class="card-text card-text-right">
+                 <h6> IMBD Rating 7.8/10 942k  </h6>
+                <a href="https://www.imdb.com/title/tt2488496/" target="_blank" class="btn btn-info"> Watch Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+    <img class="card-img-top" src="https://i.postimg.cc/J4zyZJpP/bg12.png" alt="funcard img">
+    <div class="card-body">
+        <div class="card-title h1"> The Adventures of Robin Hood
+            <div class="card-text card-text-right">
+                 <h6> IMBD Rating 7.9/10 52k  </h6>
+                <a href="https://www.imdb.com/title/tt0029843/" target="_blank" class="btn btn-info"> Watch Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src="https://i.postimg.cc/NjHQH7Hh/bg13.png" alt="funcard img">
+<div class="card-body">
+    <div class="card-title h1"> Thor: Ragnarok
+        <div class="card-text card-text-right">
+             <h6> IMBD Rating 7.9/10 768k  </h6>
+            <a href="https://www.imdb.com/title/tt3501632/" target="_blank" class="btn btn-info"> Watch Now!</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src="https://i.postimg.cc/w3YRhbMP/bg15.png" alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> Zootopia
+    <div class="card-text card-text-right">
+         <h6> IMBD Rating 8.0/10 511k  </h6>
+        <a href="https://www.imdb.com/title/tt2948356/" target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src="https://i.postimg.cc/6QcVBwqQ/bg16.png" alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> Seven Samurai
+    <div class="card-text card-text-right">
+         <h6> IMBD Rating 8.6/10 351k  </h6>
+        <a href="https://www.imdb.com/title/tt0047478/" target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src="https://i.postimg.cc/zDg74yKz/bg20.png" alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> War for the Planet of the Apes
+    <div class="card-text card-text-right">
+         <h6> IMBD Rating 7.4/10 264k  </h6>
+        <a href="https://www.imdb.com/title/tt3450958/?ref_=nv_sr_srsg_0" target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src="https://i.postimg.cc/Jh4419Bm/1-2.jpg" alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> Runaway Bride
+    <div class="card-text card-text-right">
+         <h6> IMBD Rating 5.6/10 101k  </h6>
+        <a href="https://www.imdb.com/title/tt0163187/" target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+    <img class="card-img-top" src="https://i.postimg.cc/0N81YD8C/2-2.jpg" alt="funcard img">
+    <div class="card-body">
+        <div class="card-title h1"> How to be Single
+            <div class="card-text card-text-right">
+                 <h6> IMBD Rating 6.1/10 91k  </h6>
+                <a href="https://www.imdb.com/title/tt1292566/" target="_blank" class="btn btn-info"> Watch Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src="https://i.postimg.cc/VkXzBzXz/3-2.jpg" alt="funcard img">
+<div class="card-body">
+    <div class="card-title h1"> A Simple Favor
+        <div class="card-text card-text-right">
+             <h6> IMBD Rating 6.8/10 153k  </h6>
+            <a href="https://www.imdb.com/title/tt7040874/" target="_blank" class="btn btn-info"> Watch Now!</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src="https://i.postimg.cc/PfcHgC4t/4-1.jpg" alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> Bridesmaids
+    <div class="card-text card-text-right">
+         <h6> IMBD Rating 6.8/10 297k </h6>
+        <a href="https://www.imdb.com/title/tt1478338/" target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+
+<!--
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src=" " alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> It's A Wonderful Life
+    <div class="card-text card-text-right">
+         </h6> IMBD Rating 8.6/10 469k  </h6>
+        <a href="   " target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src=" " alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> It's A Wonderful Life
+    <div class="card-text card-text-right">
+         </h6> IMBD Rating 8.6/10 469k  </h6>
+        <a href="   " target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+<div class="card box  cardcss card-text-right " style=" width: 18rem;">
+
+<img class="card-img-top" src=" " alt="funcard img">
+<div class="card-body">
+<div class="card-title h1"> It's A Wonderful Life
+    <div class="card-text card-text-right">
+         </h6> IMBD Rating 8.6/10 469k  </h6>
+        <a href="   " target="_blank" class="btn btn-info"> Watch Now!</a>
+    </div>
+</div>
+</div>
+</div>
+-->
+
+
+    </div>
+</div>
+</body>
+</html>
